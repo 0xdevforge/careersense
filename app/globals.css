@@ -2,32 +2,138 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body,
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  background: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+
+/* marquee content */
+/* marquee content */
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-left,
+.marquee-right {
+  display: inline-block;
+  padding-left: 100%;
+  /* Initial offset */
+}
+
+.marquee-left {
+  animation: marquee-left 50s linear infinite;
+}
+
+.marquee-right {
+  animation: marquee-right 50s linear infinite;
+}
+
+.topic {
+  display: inline-block;
+  padding: 1.5rem 4rem;
+  margin: 0.5rem;
+  border-radius: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  min-width: 10rem;
+  text-align: center;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .topic {
+    font-size: 20px;
+    padding: 1rem 2rem;
+    min-width: 7rem;
   }
+
+  .marquee-left,
+  .marquee-right {
+    animation-duration: 30s;
+  }
+}
+
+.bg-anxiety {
+  background-color: #333;
+}
+
+.bg-ptsd {
+  background-color: #fde68a;
+  color: white;
+
+}
+
+.bg-bipolar {
+  background-color: #22c55e;
+  color: white;
+
+}
+
+.bg-depression {
+  background-color: #60a5fa;
+  color: white;
+}
+
+.bg-abuse {
+  background-color: #ec4899;
+  color: white;
+}
+
+.bg-grief {
+  background-color: #22c55e;
+  color: white;
+}
+
+.bg-anorexia {
+  background-color: #bfdbfe;
+  color: white;
+}
+
+.bg-bulimia {
+  background-color: #f9a8d4;
+  color: white;
+}
+
+.bg-trauma {
+  background-color: #333;
+  color: white;
+}
+
+.bg-insomnia {
+  background-color: #f7d241;
+  color: white;
+}
+
+
+/* for students */
+.orange {
+  background-image: url(../public/orange.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
