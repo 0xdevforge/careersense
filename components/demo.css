@@ -1,0 +1,5 @@
+.stack-cards__item {
+    position: sticky;
+    top: var(--space-sm);
+    transform-origin: center top;
+  }

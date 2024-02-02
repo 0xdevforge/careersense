@@ -1,16 +1,20 @@
+import Cards from "@/components/Cards";
 import Everything from "@/components/Everything";
-import Header from "@/components/Header";
 import Marque from "@/components/Marque";
 import Paragraph from "@/components/Paragraph";
+import Slider from "@/components/Slider";
+import Test from "@/components/test";
 
 
 export default function Home() {
   return (
     <main>
-        <Header/>
+        <Slider/>
         <Marque/>
         <Everything/>
+        <Cards/>
         <Paragraph/>
+        <Test/>
     </main>
   );
 }

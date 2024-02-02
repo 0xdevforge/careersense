@@ -8,8 +8,33 @@ body,
   background: #ffffff;
 }
 
+.heading{
+  font-weight: 500;
+}
+.cardHeading{
+  font-weight: 700;
+  font-size: 140px;
+  color: #191408;
+  
+}
 
-/* marquee content */
+.cardmobileHeading{
+    font-weight: 700;
+    font-size: 50px;
+    text-align: left;
+    line-height: 3.0rem;
+
+}
+.ribbon{
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+  border-top: 100px solid #d69688;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+
 /* marquee content */
 @keyframes marquee-left {
   0% {
@@ -54,12 +79,12 @@ body,
 
 .topic {
   display: inline-block;
-  padding: 1.5rem 4rem;
+  padding: 0.2rem 4rem;
   margin: 0.5rem;
   border-radius: 50px;
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 50px;
   color: white;
+  font-weight: 400;
   min-width: 10rem;
   text-align: center;
 }
@@ -67,14 +92,15 @@ body,
 /* Responsive styles */
 @media (max-width: 768px) {
   .topic {
-    font-size: 20px;
-    padding: 1rem 2rem;
-    min-width: 7rem;
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 0.2rem 1rem;
+
   }
 
   .marquee-left,
   .marquee-right {
-    animation-duration: 30s;
+    animation-duration: 100s;
   }
 }
 
@@ -137,3 +163,37 @@ body,
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+
+
+@keyframes slide {
+  0% { transform: translateY(0); }
+  12.5% { transform: translateY(0); }
+  25% { transform: translateY(-100%); }
+  37.5% { transform: translateY(-100%); }
+  50% { transform: translateY(-200%); }
+  62.5% { transform: translateY(-200%); }
+  75% { transform: translateY(-300%); }
+  87.5% { transform: translateY(-300%); }
+  100% { transform: translateY(-400%); }
+}
+
+.slider {
+  height: 500px; /* Adjust based on the height of 5 images */
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-inner {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  animation: slide 10s infinite linear;
+}
+
+.slider-inner div {
+  height: 100px; /* Adjust based on individual image height */
+  margin-bottom: 20px; /* Adjust based on desired spacing between images */
+}
+
+

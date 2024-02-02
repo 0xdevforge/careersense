@@ -13,10 +13,10 @@ export default function Marque() {
         { name: 'TRAUMA', bgClass: 'bg-trauma' },
         { name: 'INSOMNIA', bgClass: 'bg-insomnia' },
       ];
-
-      const renderTopics = (direction:any) => (
+      const allTopics = [...topics, ...topics];
+      const renderTopics = (direction: any) => (
         <div className={`marquee-${direction}`}>
-          {topics.map((topic, index) => (
+          {allTopics.map((topic, index) => (
             <div key={index} className={`topic ${topic.bgClass}`}>
               {topic.name}
             </div>
@@ -31,7 +31,7 @@ export default function Marque() {
       );
 
       return (
-        <div className="-mx-12">
+        <div className="-mx-12 lg:my-32">
           <div className="marquee">
             {renderTopics('left')}
           </div>

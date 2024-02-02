@@ -43,7 +43,7 @@ export default function Navbar() {
                     style={{ scale }}
                 >
                     <div className="pr-12 uppercase items-center flex text-left justify-between">
-                        <span className="font-semibold text-2xl text-[#161b32]">Work</span>
+                        <span className="  tracking-tighter text-3xl text-[#161b32]">Work</span>
                         <Image src={logo} alt="logo" className="ml-12 mr-4" />
                         <Button text="Play" />
                     </div>

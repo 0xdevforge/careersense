@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Phudu } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const phudu = Phudu({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className= {`${inter.className} lg:mx-12 lg:py-8 px-6 lg:px-0 overflow-x-hidden`} >
+      <body className= {`${phudu.className} lg:mx-12 lg:py-8 px-6 lg:px-0 overflow-x-hidden `} >
         <Navbar />
         {children}
       </body>
